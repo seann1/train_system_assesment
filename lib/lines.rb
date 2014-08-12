@@ -20,7 +20,4 @@ class Line
     end
     all_lines
   end
-
-
-
 end

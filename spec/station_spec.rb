@@ -19,5 +19,14 @@ describe 'Station' do
       expect(test_station.id).to be_an Integer
     end
   end
+
+  describe "self.all" do
+    it "returns all stations from database" do
+      test_station = Station.new({:name => "First Station"})
+      test_station.save
+      expect(Station.all.length).to eq 1
+    end
+  end
 end
+
 

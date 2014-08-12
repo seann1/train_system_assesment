@@ -11,6 +11,15 @@ class Station
     results = DB.exec("INSERT INTO stations (name) VALUES ('#{@name}') RETURNING id;")
     @id = results.first['id'].to_i
   end
+
+  def self.all
+    all_stations = []
+    results = DB.exec("SELECT * FROM stations")
+    results.each do |result|
+      all_stations << Station.new({:name => result['name'], :id => result['id']})
+    end
+    all_stations
+  end
 end
 
 
