@@ -24,6 +24,10 @@ class Station
   def self.delete(id)
     DB.exec("DELETE FROM stations WHERE id = #{id}")
   end
+
+  def self.change_name(id, new_name)
+    DB.exec("UPDATE stations SET name = '#{new_name}' WHERE id = #{id};")
+  end
 end
 
 

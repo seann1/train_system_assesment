@@ -37,6 +37,15 @@ describe 'Station' do
     end
   end
 
+  describe "self.change_name" do
+    it "allows the user to change a station's name" do
+      test_station = Station.new({:name => "Main Station"})
+      test_station.save
+      Station.change_name(test_station.id, "second station")
+      expect(Station.all[0].name).to eq "second station"
+    end
+  end
+
 end
 
 
