@@ -40,4 +40,18 @@ describe 'Stop' do
     end
   end
 
+  describe "self.edit" do
+    it "allows user to change line id and station id for a stop" do
+      test_line = Line.new({:name => "Main Line"})
+      test_line.save
+      test_station = Station.new({:name => "First Station"})
+      test_station.save
+      test_stop = Stop.new({:line_id => test_line.id, :station_id => test_station.id})
+      test_stop.save
+      Stop.edit(test_stop.id, 12, 34)
+      expect(Stop.all.first.line_id.to_i).to eq 12
+    end
+  end
+
+
 end
