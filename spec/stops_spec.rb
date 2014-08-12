@@ -53,5 +53,12 @@ describe 'Stop' do
     end
   end
 
-
+  describe 'self.delete' do
+    it 'deletes a stop from the database' do
+      test_stop = Stop.new({:line_id => 4, :station_id => 6})
+      test_stop.save
+      Stop.delete(test_stop.id)
+      expect(Stop.all.length).to eq 0
+    end
+  end
 end

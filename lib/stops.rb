@@ -23,9 +23,12 @@ class Stop
   end
 
   def self.edit(id, new_line_id, new_station_id)
-
     DB.exec("UPDATE stops SET line_id = #{new_line_id} WHERE id = #{id};")
     DB.exec("UPDATE stops SET station_id = #{new_station_id} WHERE id = #{id};")
+  end
+
+  def self.delete(id)
+    DB.exec("DELETE FROM stops WHERE id = #{id};")
   end
 
 
