@@ -25,4 +25,8 @@ class Line
     DB.exec("DELETE FROM lines WHERE id = #{id};")
   end
 
+  def self.change_name(id, new_name)
+    DB.exec("UPDATE lines SET name = '#{new_name}' WHERE id = #{id};")
+  end
+
 end

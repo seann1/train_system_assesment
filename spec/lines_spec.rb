@@ -36,4 +36,13 @@ describe 'Line' do
       expect(Line.all.length).to eq 0
     end
   end
+
+  describe "self.change_name" do
+    it "allows the user to change a line's name" do
+      test_line = Line.new({:name => "Main Line"})
+      test_line.save
+      Line.change_name(test_line.id, "second line")
+      expect(Line.all[0].name).to eq "second line"
+    end
+  end
 end
