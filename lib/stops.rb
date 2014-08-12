@@ -13,5 +13,14 @@ class Stop
     @id = results.first['id'].to_i
   end
 
+  def self.all
+    all_stops = []
+    results = DB.exec("SELECT * FROM stops")
+    results.each do |result|
+      all_stops << Stop.new({:line_id => result['line_id'],:id => result['id'], :station_id => result['station_id']})
+    end
+    all_stops
+  end
+
 
 end

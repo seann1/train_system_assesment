@@ -32,6 +32,12 @@ describe 'Stop' do
     end
   end
 
-
+  describe "self.all" do
+    it "returns all stops from database" do
+      test_stop = Stop.new({:line_id => 3, :station_id => 4})
+      test_stop.save
+      expect(Stop.all.length).to eq 1
+    end
+  end
 
 end
