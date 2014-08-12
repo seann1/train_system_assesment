@@ -19,4 +19,12 @@ describe 'Line' do
       expect(test_line.id).to be_an Integer
     end
   end
+
+  describe "self.all" do
+    it "returns all lines from database" do
+      test_line = Line.new({:name => "Main Line"})
+      test_line.save
+      expect(Line.all.length).to eq 1
+    end
+  end
 end

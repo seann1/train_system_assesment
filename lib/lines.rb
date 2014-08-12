@@ -12,4 +12,15 @@ class Line
     @id = results.first['id'].to_i
   end
 
+  def self.all
+    all_lines = []
+    results = DB.exec("SELECT * FROM lines")
+    results.each do |result|
+      all_lines << Line.new({:name => result['name'], :id => result['id']})
+    end
+    all_lines
+  end
+
+
+
 end
