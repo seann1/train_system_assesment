@@ -20,6 +20,10 @@ class Station
     end
     all_stations
   end
+
+  def self.delete(id)
+    DB.exec("DELETE FROM stations WHERE id = #{id}")
+  end
 end
 
 

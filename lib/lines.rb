@@ -20,4 +20,9 @@ class Line
     end
     all_lines
   end
+
+  def self.delete(id)
+    DB.exec("DELETE FROM stations WHERE id = #{id};")
+  end
+
 end

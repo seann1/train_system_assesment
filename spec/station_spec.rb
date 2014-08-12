@@ -27,6 +27,16 @@ describe 'Station' do
       expect(Station.all.length).to eq 1
     end
   end
+
+  describe "self.delete" do
+    it "deletes a station from the database" do
+      test_station = Station.new({:name => "First Station"})
+      test_station.save
+      Station.delete(test_station.id)
+      expect(Station.all.length).to eq 0
+    end
+  end
+
 end
 
 
