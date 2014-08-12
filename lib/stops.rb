@@ -9,7 +9,9 @@ class Stop
   end
 
   def save
-    results = DB.exec("INSERT INTO stops (line_id, station_id) VALUES ('#{line_id}', '#{station_id}';")
+    results = DB.exec("INSERT INTO stops (line_id, station_id) VALUES ('#{line_id}', '#{station_id}') RETURNING id;")
     @id = results.first['id'].to_i
   end
+
+
 end
