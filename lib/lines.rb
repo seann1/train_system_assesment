@@ -29,4 +29,11 @@ class Line
     DB.exec("UPDATE lines SET name = '#{new_name}' WHERE id = #{id};")
   end
 
+  def self.display_lines
+    all_lines = Line.all
+    all_lines.each do |line|
+      puts "#{line.id}. #{line.name}"
+    end
+  end
+
 end

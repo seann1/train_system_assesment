@@ -28,6 +28,13 @@ class Station
   def self.change_name(id, new_name)
     DB.exec("UPDATE stations SET name = '#{new_name}' WHERE id = #{id};")
   end
+
+  def self.display_stations
+    all_stations = Station.all
+    all_stations.each do |line|
+      puts "#{line.id}. #{line.name}"
+    end
+  end
 end
 
 
