@@ -22,7 +22,7 @@ class Line
   end
 
   def self.delete(id)
-    DB.exec("DELETE FROM stations WHERE id = #{id};")
+    DB.exec("DELETE FROM lines WHERE id = #{id};")
   end
 
 end

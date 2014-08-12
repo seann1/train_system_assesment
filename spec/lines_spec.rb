@@ -27,4 +27,13 @@ describe 'Line' do
       expect(Line.all.length).to eq 1
     end
   end
+
+  describe "self.delete" do
+    it "deletes a line from the database" do
+      test_line = Line.new({:name => "Main Line"})
+      test_line.save
+      Line.delete(test_line.id)
+      expect(Line.all.length).to eq 0
+    end
+  end
 end
