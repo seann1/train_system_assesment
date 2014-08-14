@@ -95,5 +95,12 @@ def delete_line
   Line.delete_line(user_line_id)
 end
 
+def create_station
+  puts "Enter station name"
+  station_name = gets.chomp
+  new_station = Station.new({:name => station_name})
+  new_station.save
+end
+
 welcome
 
