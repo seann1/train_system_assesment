@@ -102,5 +102,14 @@ def create_station
   new_station.save
 end
 
+def edit_station
+  Station.display_stations
+  puts "Enter id of station you want to change"
+  user_id = gets.chomp
+  puts "Enter new station name"
+  user_name = gets.chomp
+  Station.change_name(user_id, user_name)
+end
+
 welcome
 
