@@ -88,5 +88,12 @@ def edit_line
   Line.change_name(user_id, user_name)
 end
 
+def delete_line
+  Line.display_lines
+  puts "Enter id of line"
+  user_line_id = gets.chomp
+  Line.delete_line(user_line_id)
+end
+
 welcome
 
