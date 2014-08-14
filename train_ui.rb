@@ -111,5 +111,12 @@ def edit_station
   Station.change_name(user_id, user_name)
 end
 
+def delete_station
+  Station.display_stations
+  puts "Enter id of station"
+  user_station_id = gets.chomp
+  Station.delete_station(user_station_id)
+end
+
 welcome
 
