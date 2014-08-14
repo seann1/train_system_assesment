@@ -72,5 +72,12 @@ def welcome
   end
 end
 
+def create_line
+  puts "Enter line name"
+  line_name = gets.chomp
+  new_line = Line.new({:name => line_name})
+  new_line.save
+end
 
-  end
+welcome
+
