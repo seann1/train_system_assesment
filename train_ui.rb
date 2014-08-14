@@ -129,5 +129,16 @@ def create_stop
   new_stop.save
 end
 
+def edit_stop
+  Stop.display_stops
+  puts "enter the id of the stop you would like to edit"
+  user_id = gets.chomp
+  puts "enter new line id"
+  user_line_id = gets.chomp
+  puts "enter new station id"
+  user_station_id = gets.chomp
+  Stop.edit(user_id, user_line_id, user_station_id)
+end
+
 welcome
 
