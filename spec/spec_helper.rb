@@ -5,7 +5,7 @@ require './lib/station'
 require './lib/stops'
 require 'pry'
 
-DB = PG.connect(:dbname => 'train_station_test')
+DB = PG.connect(:dbname => 'train_system_test')
 
 RSpec.configure do |config|
   config.after(:each) do
