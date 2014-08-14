@@ -79,5 +79,14 @@ def create_line
   new_line.save
 end
 
+def edit_line
+  Line.display_lines
+  puts "Enter id of line you want to change"
+  user_id = gets.chomp
+  puts "Enter new line name"
+  user_name = gets.chomp
+  Line.change_name(user_id, user_name)
+end
+
 welcome
 
