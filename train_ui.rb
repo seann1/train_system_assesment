@@ -147,5 +147,13 @@ def delete_stop
   Stop.delete_stop(user_stop_id)
 end
 
+def query_lines
+  Line.display_lines
+end
+
+def query_stations
+  Station.display_stations
+end
+
 welcome
 
