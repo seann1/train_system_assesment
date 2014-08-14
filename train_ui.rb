@@ -118,5 +118,16 @@ def delete_station
   Station.delete_station(user_station_id)
 end
 
+def create_stop
+  Line.display_lines
+  puts "Enter id of line"
+  user_line_id = gets.chomp
+  Station.display_stations
+  puts "Enter id of station"
+  user_station_id = gets.chomp
+  new_stop = Stop.new({:line_id => user_line_id, :station_id => user_station_id})
+  new_stop.save
+end
+
 welcome
 
