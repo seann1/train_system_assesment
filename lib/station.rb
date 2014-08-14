@@ -35,6 +35,17 @@ class Station
       puts "#{line.id}. #{line.name}"
     end
   end
+
+  def self.lines_for_station(input)
+    results = DB.exec("SELECT lines.name FROM lines
+                    JOIN stops ON (stops.line_id = lines.id)
+                    JOIN stations ON (stops.station_id = stations.id)
+                    WHERE stations.id = #{input};")
+  results.each do |item|
+    puts "#{item['name']}"
+  end
+
+  end
 end
 
 

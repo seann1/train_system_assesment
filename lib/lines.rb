@@ -36,7 +36,7 @@ class Line
     end
   end
 
-  def self.lines_for_station(input)
+  def self.stations_for_line(input)
     results = DB.exec("SELECT stations.name FROM stations
                     JOIN stops ON (stops.station_id = stations.id)
                     JOIN lines ON (stops.line_id = lines.id)

@@ -159,20 +159,14 @@ def query_line_stations
   Line.display_lines
   puts "Enter the id of the line you would like to view stops for"
   user_line = gets.chomp
-  Line.lines_for_station(user_line)
+  Line.stations_for_line(user_line)
 end
 
 def query_station_lines
   Station.display_stations
   puts "Enter the id of the station you would like to view lines for"
   user_station = gets.chomp
-  results = DB.exec("SELECT lines.name FROM lines
-                    JOIN stops ON (stops.line_id = lines.id)
-                    JOIN stations ON (stops.station_id = stations.id)
-                    WHERE stations.id = #{user_station};")
-  results.each do |item|
-    puts "#{item['name']}"
-  end
+  Station.lines_for_station(user_station)
 end
 
 welcome
