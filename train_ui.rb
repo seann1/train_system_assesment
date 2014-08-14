@@ -140,5 +140,12 @@ def edit_stop
   Stop.edit(user_id, user_line_id, user_station_id)
 end
 
+def delete_stop
+  Stop.display_stops
+  puts "Enter id of stop"
+  user_stop_id = gets.chomp
+  Stop.delete_stop(user_stop_id)
+end
+
 welcome
 
