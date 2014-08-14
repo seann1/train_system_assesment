@@ -39,5 +39,38 @@ def welcome
       welcome
     end
 
+    if second_choice == 'lc'
+      create_line
+    elsif second_choice == 'le'
+      edit_line
+    elsif second_choice == 'ld'
+      delete_line
+    elsif second_choice == 'sc'
+      create_station
+    elsif second_choice == 'se'
+      edit_station
+    elsif second_choice == 'sd'
+      delete_station
+    elsif second_choice == 'tc'
+      create_stop
+    elsif second_choice == 'te'
+      edit_stop
+    elsif second_choice == 'td'
+      delete_stop
+    elsif second_choice == 'ql'
+      query_lines
+    elsif second_choice == 'qs'
+      query_stations
+    elsif second_choice == 'qls'
+      query_line_stations
+    elsif second_choice == 'qsl'
+      query_station_lines
+    else
+      "Not a valid option, try again"
+      welcome
+    end
+  end
+end
+
 
   end
